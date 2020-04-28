@@ -1,0 +1,40 @@
+.container {
+  background-color: bisque;
+  display: flex;
+  justify-content: left;
+  min-width: 300px;
+}
+
+.character {
+  background-color: #eee;
+  margin: 10px;
+  padding-top: 10px;
+  align-items: stretch;
+  color: #333;
+  font: 500 16px Verdana;
+}
+.list{
+  margin: 0;
+  padding: 0;
+}
+.list > li {
+  list-style: none;
+  padding: 5px 20px;
+}
+.svg {
+  margin: 10px;
+  background-color: #eee;
+  border: 1px solid #333;
+  min-height: 150px;
+}
+.teeth {
+  display: none;
+}
+h2, h3 {
+  color: #333;
+  font-family: Verdana, Arial, Tahoma, sans-serif;
+  text-align: center;
+}
+#mouth {
+  background-color: crimson;
+}
