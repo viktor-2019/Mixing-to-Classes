@@ -7,6 +7,7 @@ class Human {
     this.weight = weight;
     this.kind = 'Human';
   }
+  
   title() {
     let h2 = document.createElement('h2');
     h2.classList.add('title-class');
