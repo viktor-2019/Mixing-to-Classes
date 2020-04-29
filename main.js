@@ -7,7 +7,7 @@ class Human {
     this.weight = weight;
     this.kind = 'Human';
   }
-  
+
   title() {
     let h2 = document.createElement('h2');
     h2.classList.add('title-class');
@@ -22,6 +22,7 @@ class Human {
     container.classList.add('container');
     h2.after(container);
     let svg = document.createElement('div');
+
     // It is base svg-picture from simple figures
     let block ='<svg class="svg" width = "300" height = "300"><circle  cx="150" cy="140" r="100" stroke="#888888" fill="transparent" stroke-width="3"/>';
     block += '<g class = "eyes"><ellipse cx="200" cy="120" rx="30" ry="15" fill="transparent" stroke="#888888"  stroke-width="3"/>';
@@ -31,6 +32,7 @@ class Human {
     block += '<rect x="160" y="180" width="15" height="15" fill="white"  stroke="none" /></g></svg>';
     svg.innerHTML= block;
     container.prepend(svg);
+
     // It is a box for data like "name", "age"... 
     let character = document.createElement('div');
     character.classList.add('character');
@@ -65,7 +67,7 @@ class Europeoid extends Human {
   }
  
   picture() {
-    // filling by colors 
+    // call prototype and fill eyes and mouth by the colors 
     this.__proto__.picture();
     let ee = document.querySelectorAll('.eyes');
     let eyes = ee[ee.length-1];
@@ -79,7 +81,8 @@ class Europeoid extends Human {
 
 }
 let asianKind = {
-  // Two mathods for mixing it to classes
+  // Two mathods ("asianEyes" and "asianSmile" 
+  // for mixing them to Human and Europeoid classes
   asianEyes () {
     let ey = document.querySelectorAll('.eyes');
     let eyes = ey[ey.length-1];
@@ -106,11 +109,10 @@ let asianKind = {
   }
 }
 
-// just mixing
+// moment of mixing
 Object.assign(Human.prototype, asianKind);
 
-
-
+// Using
 let ivan = new Human('Ivan', 22, 77);
 ivan
   .title()
