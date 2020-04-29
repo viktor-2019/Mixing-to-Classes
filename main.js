@@ -8,11 +8,9 @@ class Human {
     this.kind = 'Human';
   }
   title() {
-    let idvar = Math.random();
     let h2 = document.createElement('h2');
     h2.classList.add('title-class');
     h2.innerHTML = this.kind;
-    h2.id = '|' + idvar;
     document.body.append(h2);
     return this;
   }
@@ -23,7 +21,7 @@ class Human {
     container.classList.add('container');
     h2.after(container);
     let svg = document.createElement('div');
-   
+    // It is base svg-picture from simple figures
     let block ='<svg class="svg" width = "300" height = "300"><circle  cx="150" cy="140" r="100" stroke="#888888" fill="transparent" stroke-width="3"/>';
     block += '<g class = "eyes"><ellipse cx="200" cy="120" rx="30" ry="15" fill="transparent" stroke="#888888"  stroke-width="3"/>';
     block += '<ellipse cx="100" cy="120" rx="30" ry="15" fill="transparent" stroke="#888888"  stroke-width="3"/></g>';
@@ -31,9 +29,8 @@ class Human {
     block += '<g id = "teeth" class = "teeth"><rect x="130" y="180" width="15" height="15" fill="white"  stroke="none" />';
     block += '<rect x="160" y="180" width="15" height="15" fill="white"  stroke="none" /></g></svg>';
     svg.innerHTML= block;
-
     container.prepend(svg);
-
+    // It is a box for data like "name", "age"... 
     let character = document.createElement('div');
     character.classList.add('character');
     let h3 = document.createElement('h3');
@@ -48,6 +45,7 @@ class Human {
     return this;
   }
   data() {
+    // Insert data to box;
     let u = document.querySelectorAll('.list');
     let ul = u[u.length-1];   
     for (let key of Object.keys(this)) {
@@ -66,6 +64,7 @@ class Europeoid extends Human {
   }
  
   picture() {
+    // filling by colors 
     this.__proto__.picture();
     let ee = document.querySelectorAll('.eyes');
     let eyes = ee[ee.length-1];
@@ -79,6 +78,7 @@ class Europeoid extends Human {
 
 }
 let asianKind = {
+  // Two mathods for mixing it to classes
   asianEyes () {
     let ey = document.querySelectorAll('.eyes');
     let eyes = ey[ey.length-1];
@@ -105,6 +105,7 @@ let asianKind = {
   }
 }
 
+// just mixing
 Object.assign(Human.prototype, asianKind);
 
 
