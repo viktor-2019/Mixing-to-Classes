@@ -68,7 +68,8 @@ class Europeoid extends Human {
  
   picture() {
     // call prototype and fill eyes and mouth by the colors 
-    this.__proto__.picture();
+    Object.getPrototypeOf(this).picture();
+    // this.__proto__.picture();
     let ee = document.querySelectorAll('.eyes');
     let eyes = ee[ee.length-1];
     eyes.firstElementChild.setAttribute('fill', '#1188ee');
